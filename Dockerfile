@@ -1,4 +1,4 @@
-FROM alpine:3
+FROM alpine:3.12.0
 
 # Install
 RUN apk --no-cache add bash curl minidlna tini shadow su-exec alpine-conf inotify-tools
