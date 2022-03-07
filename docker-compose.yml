@@ -1,0 +1,20 @@
+version: "3.7"
+
+services:
+  app:
+    network_mode: host
+    container_name: minidlna
+    restart: always
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - /home/zero/Akin2/Movies:/media/Movies
+      - /home/zero/Akin2/Anime:/media/Anime
+      - /home/zero/Akin2/Series:/media/Series
+      - ./minidlna:/minidlna
+    environment:
+      - MINIDLNA_MEDIA_DIR_1=V,/media/Movies
+      - MINIDLNA_MEDIA_DIR_2=V,/media/Anime
+      - MINIDLNA_MEDIA_DIR_3=V,/media/Series
+      - MINIDLNA_FRIENDLY_NAME=Zero-PI
